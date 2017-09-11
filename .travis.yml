@@ -6,7 +6,7 @@ before_install:
 language: java
 matrix:
   include:
-  - jdk: oraclejdk7
+  - jdk: oraclejdk8
     os: linux
   - os: osx
 notifications:
@@ -16,4 +16,4 @@ notifications:
     template:
     - Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository}@%{branch} by %{author} %{result} in %{duration}
     - 'dashbot: %{repository_name} %{build_id}'
-script: mvn test && mvn clean verify
+script: "mvn test && mvn clean verify"
